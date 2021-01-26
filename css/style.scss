@@ -1,0 +1,617 @@
+/********** 초기화 **********/ 
+body,ul,h1,h2,h3,h4,h5,h6,figure,p,dl,dd {
+  margin: 0;
+  padding: 0;
+}
+
+em {
+  font-style: normal;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button {
+  border: none;
+  padding: 0;
+  outline: none;
+  background-color: transparent;
+}
+
+/********** 공통 **********/
+html {
+  font-size: 62.5%;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+html::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera*/
+}
+
+body {
+  line-height: 1;
+  background-color: #f9647a;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 1.6rem;
+  color: #fff;
+  letter-spacing: .05em;
+}
+
+a {
+  color: #fff;
+}
+
+.blind { /* 웹 접근성을 위한 숨김텍스트 제공 */
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+}
+
+/********** 스타일 **********/
+.container {
+  max-width: 144rem;
+  padding: 22.8rem 15rem 0;
+  margin: auto;
+}
+
+.header {
+  position: fixed;
+  top: 6rem;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 6rem;
+
+  &__logo {
+    display: block;
+    font-size: 3rem;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 700;
+    transition: .4s;
+  }
+
+  &__change-nine {
+    display: inline-block;
+
+    &.active {
+      animation: nine-animation 0.8s ease-in-out;
+    }
+
+    @keyframes nine-animation {
+      0% { transform: translateX(60px);}
+      100% { transform: translateX(0);}
+    }
+  }
+
+  &__btn-all-menu {
+    position: relative;
+    width: 22px;
+    height: 24px;
+    border-top-width: 5px;
+    border-bottom-width: 5px;
+    border-left-width: 0;
+    border-right-width: 0;
+    border-color: #fff;
+    border-style: solid;
+    cursor: pointer;
+  }
+}
+
+.careers {
+
+  &__title {
+    line-height: 1.25em;
+    font-size: 5.6rem;
+    font-weight: 700;
+  }
+
+  &__br {
+    display: none;
+
+    &.active {
+      display: inline;
+    }
+  }
+
+  &__white-box {
+    position: relative;
+    
+    &:first-child {
+      display: inline-block;
+      margin-bottom: .5rem;
+    }
+    
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background-color: #fff;
+      transition: 2s 0.4s;
+    }
+
+    &.fade:after {
+      left: 100%;
+    }
+  }
+
+  &__description-wrap {
+    margin: 8.2rem 0 17rem;
+    transform: translateY(50px);
+    opacity: 0;
+    transition: 1s;
+
+    &.active {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  &__description-list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__description-item {
+    width: 50%;
+    margin-bottom: 7rem;
+    font-size: 2rem;
+
+    dl {
+      padding-left: 8rem;
+      background-repeat: no-repeat;
+      background-position: left center;
+    }
+
+    dt {
+      margin-bottom: 1.3rem;
+      font-weight: 500;
+    }
+
+    dd {
+      padding-right: 4rem;
+      line-height: 1.6em;
+      font-weight: 300;
+    }
+  }
+
+  &__work {
+    background-image: url(../images/work.svg);
+  }
+
+  &__self-development {
+    background-image: url(../images/self-development.svg);
+  }
+
+  &__free-vacation {
+    background-image: url(../images/free-vacation.svg);
+  }
+
+  &__refresh-vacation {
+    background-image: url(../images/refresh-vacation.svg);
+  }
+
+  &__condo {
+    background-image: url(../images/condo.svg);
+  }
+
+  &__culture-day {
+    background-image: url(../images/culture-day.svg);
+  }
+
+  &__welcome {
+    background-image: url(../images/welcome.svg);
+  }
+
+  &__console {
+    background-image: url(../images/console.svg);
+  }
+
+  &__recruitment-list {
+    position: relative;
+  }
+  
+  &__recruitment-list {
+    &:after {
+      content: '';
+      display: block;
+      padding-top: 50%;
+    }
+  }
+
+  &__recruitment-item {
+    position: absolute;
+    top: 0;
+    background: no-repeat center / 100% 100%;
+    transform: scale(1);
+    transition: transform .4s;
+    opacity: 0;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    &.active {
+      opacity: 1;
+    }
+
+    &--ux {
+      left: 6.6rem;
+      background-image: url(../images/ux-design.svg);
+      width: 386px;
+      height: 300px;
+      transition: transform .4s, opacity .3s .2s;
+    }
+
+    &--gui {
+      left: 42.4rem;
+      background-image: url(../images/gui-design.svg);
+      width: 354px;
+      height: 350px;
+      transition: transform .4s, opacity .3s .4s;
+    }
+
+    &--interaction {
+      left: 77.5rem;
+      background-image: url(../images/interaction-design.svg);
+      width: 395px;
+      height: 312px;
+      transition: transform .4s, opacity .3s .6s;
+    }
+
+    &--plan {
+      left: -8.7rem;
+      top: 28rem;
+      background-image: url(../images/plan.svg);
+      width: 416px;
+      height: 294px;
+      transition: transform .4s, opacity .3s .8s;
+    }
+
+    &--sw {
+      left: 29rem;
+      top: 27rem;
+      background-image: url(../images/sw-develope.svg);
+      width: 365px;
+      height: 298px;
+      transition: transform .4s, opacity .3s 1s;
+    }
+
+    &--operator {
+      left: 60.6rem;
+      top: 25rem;
+      background-image: url(../images/operate.svg);
+      width: 436px;
+      height: 308px;
+      transition: transform .4s, opacity .3s 1.2s;
+    }
+  }
+
+  &__name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-size: 1.8rem;
+    color: #f9647a;
+  }
+}
+
+.footer {
+  margin: 8rem 0 6.6rem;
+  font-size: 1.3rem;
+  font-weight: 300;
+
+  &__all-menu-list {
+    display: flex;
+  }
+
+  &__all-menu-item {
+    margin-right: 1.5rem;
+  }
+
+  &__copyright {
+    margin-top: 1.6rem;
+  }
+}
+
+.btn-move-top {
+  position: fixed;
+  right: 6.2rem;
+  bottom: 6rem;
+  cursor: pointer;
+  opacity: 0;
+  transition: .4s;
+
+  &.active {
+    opacity: 1;
+  }
+}
+
+
+@media (max-width: 1440px){
+  .header {
+    top: 4.02778vw;
+    padding: 0 4.16667vw;
+  }
+
+  .container {    
+    padding: 15.97222vw 10.41667vw 0;
+  }
+
+  .careers__title {
+    font-size: 3.88889vw;
+  }
+
+  .careers__description-item {
+    margin-bottom: 4.44444vw;
+    font-size: 1.38889vw;
+  }
+
+  .careers__description-item dl {
+    padding-left: 7.82014vw;
+    background-size: 3.05556vw 3.05556vw;
+  }
+
+  .careers__description-item dd {
+    padding-right: 1.38889vw;
+    font-size: 1.38889vw;
+  }
+
+  .careers__recruitment-item--ux {
+    width: 26.80556vw; 
+    height: 20.83333vw;
+    left: 4.51389vw;
+  }
+
+  .careers__recruitment-item--gui {
+    width: 24.58333vw;
+    height: 24.58333vw;
+    left: 29.44444vw;
+  }
+
+  .careers__recruitment-item--interaction {
+    width: 27.5vw;
+    height: 25.55556vw;
+    left: 53.75vw;
+  }
+
+  .careers__recruitment-item--plan {
+    width: 27.36111vw;
+    height: 22.36111vw;
+    left: -6.11111vw;
+    top: 17vw;
+  }
+
+  .careers__recruitment-item--sw {
+    width: 25.97222vw;
+    height: 21.25vw;
+    left: 20.13889vw;
+    top: 19vw;
+  }
+
+  .careers__recruitment-item--operator {
+    width: 30.27778vw;
+    height: 21.38889vw;
+    left: 42.08333vw;
+    top: 17vw;
+  }
+
+  .careers__name {
+    font-size: 1.25vw;
+  }
+}
+
+@media (max-width: 1280px){
+  .header__logo {
+    font-size: 2.7rem;
+  }
+
+  .header__btn-all-menu {
+    width: 18px;
+    height: 20px;
+    border-top-width: 4px;
+    border-bottom-width: 4px;
+    border-left-width: 0;
+    border-right-width: 0;
+  }
+}
+
+@media (max-width: 1023px){
+  .header {
+    top: 3rem;
+  }
+
+  .header {
+    padding: 0 4.88759vw;
+  }
+
+  .header__logo {
+    font-size: 2.5rem;
+  }
+
+  .header__btn-all-menu {
+    width: 16px;
+    height: 16px;
+    border-top-width: 3px;
+    border-bottom-width: 3px;
+    border-left-width: 0;
+    border-right-width: 0;
+  }
+
+  .container {    
+    padding: 23.46041vw 10.41667vw 0;
+  }
+
+  .careers__title {
+    font-size: 5.08309vw;
+  }
+
+  .careers__description-wrap {
+    margin: 8.2rem 0 10.75269vw;
+  }
+
+  .careers__description-item {
+    margin-bottom: 6.25611vw;
+    font-size: 1.75953vw;
+  }
+
+  .careers__description-item dl {
+    padding-left: 7.82014vw;
+    background-size: 4.30108vw 4.30108vw;
+  }
+
+  .careers__description-item dd {
+    padding-right: 1.95503vw;
+    font-size: 1.75953vw;
+  }
+
+  .footer {
+    margin: 5.8651vw 0;
+  }
+
+  .footer__all-menu-list {
+    display: none;
+  }
+
+  .footer__copyright {
+    margin-top: 0;
+  }
+
+  .btn-move-top {
+    right: 6vw;
+    bottom: 4.3vw;
+
+    img {
+      width: 4vw;
+    }
+  }
+}
+
+@media (max-width: 639px){
+  .careers__description-item {
+    width: 100%;
+  }
+}
+
+@media (max-width: 535px){
+  .careers__br {
+    display: inline;
+  }
+}
+
+@media (max-width: 419px){
+  .header {
+    top: 0;
+    z-index: 99;
+    padding: 2rem 4.16667vw;
+    background-color: #f9647a;
+  }
+
+  .careers__title {
+    font-size: 9.54654vw;
+    font-weight: 500;
+  }
+
+  .careers__white-box {
+    display: inline-block;
+    margin-bottom: .5rem;
+  }
+  
+  .careers__description-item dl {
+    padding: 15.82014vw 0 0;
+    background-size: 9.6vw 9.6vw;
+    background-position: left top;
+  }
+
+  .careers__description-item dt {
+    font-size: 4.05728vw;
+  }
+
+  .careers__description-item dd {
+    font-size: 4.05728vw;
+  }
+
+  .careers__recruitment-item--ux {
+    width: 68.80556vw;
+    height: 53.83333vw;
+    left: -10vw;
+    top: 30vw;
+  }
+
+  .careers__recruitment-item--gui {
+    width: 53.33333vw;
+    height: 53.33333vw;
+    left: 36vw;
+  }
+
+  .careers__recruitment-item--interaction {
+    width: 66.66667vw;
+    height: 69.6vw;
+    left: 22.66667vw;
+    bottom: auto;
+    top: 45vw;
+  }
+
+  .careers__recruitment-item--plan {
+    width: 64.53333vw;
+    height: 52.8vw;
+    left: -18.66667vw;
+    top: 90vw;
+  }
+
+  .careers__recruitment-item--sw {
+    width: 64.53333vw;
+    height: 52.8vw;
+    left: 24.66667vw;
+    bottom: auto;
+    top: 115vw;
+  }
+
+  .careers__recruitment-item--operator {
+    width: 60.26667vw;
+    height: 46.93333vw;
+    left: -30px;
+    top: 150vw;
+  }
+
+  .careers__recruitment-list:after {
+    padding-top: 250%;
+  }
+
+  .careers__name {
+    font-size: 4.05728vw;
+  }
+
+  .footer__copyright {
+    font-size: 1.1rem;
+  }
+  
+  .btn-move-top img {
+    width: 7.63723vw;
+  }
+}
+
+
+
+
+
+

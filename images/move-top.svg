@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+    <g fill="#ffffff" fill-rule="evenodd">
+        <text font-family="Muli-Regular_Bold, Muli" font-size="14" font-weight="bold" letter-spacing="-.201" transform="translate(5 2)">
+            <tspan x="1.597" y="35.378">TOP</tspan>
+        </text>
+        <path d="M15.4 0l1.412 1.413-.01.008 13.98 13.98-1.413 1.414L15.39 2.833 1.413 16.815l-1.414-1.414 13.98-13.98-.01-.008L15.383 0l.008.009L15.4 0z" transform="translate(5 2)"/>
+    </g>
+</svg>
